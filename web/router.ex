@@ -19,8 +19,8 @@ defmodule Intestines.Router do
     get "/", PageController, :index
   end
 
-  # Other scopes may use custom stacks.
-  # scope "/api", Intestines do
-  #   pipe_through :api
-  # end
+  scope "/api", Intestines do
+    pipe_through :api
+    resources "/incoming", IncomingPayloadController, only: [:create]
+  end
 end
