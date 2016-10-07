@@ -18,8 +18,17 @@ defmodule Intestines.Mixfile do
   # Type `mix help compile.app` for more information.
   def application do
     [mod: {Intestines, []},
-     applications: [:phoenix, :phoenix_pubsub, :phoenix_html, :cowboy, :logger, :gettext,
-                    :phoenix_ecto, :postgrex]]
+     applications: [
+       :cowboy,
+       :gettext,
+       :logger,
+       :phoenix,
+       :phoenix_ecto,
+       :phoenix_html,
+       :phoenix_pubsub,
+       :postgrex,
+       :rollbax,
+     ]]
   end
 
   # Specifies which paths to compile per environment.
@@ -40,6 +49,7 @@ defmodule Intestines.Mixfile do
       {:phoenix_pubsub, "~> 1.0"},
       {:postgrex, ">= 0.0.0"},
       {:quick_alias, "~> 0.1.0"},
+      {:rollbax, "~> 0.6"},
    ]
   end
 
